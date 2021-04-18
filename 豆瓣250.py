@@ -41,9 +41,11 @@ def get_info(url):
 
 
 def main():
+    global df
     for url in url_lists:
         get_info(url)
     print(df)
+    df = df[['中文电影名', '英文电影名', '其他电影名', '评分']]
     df.to_csv('douban250.csv', index=False, encoding='utf-8')
 
 
