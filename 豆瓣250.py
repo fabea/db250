@@ -40,9 +40,12 @@ def get_info(url):
         df = df.append(series, ignore_index=True)
 
 
-for url in url_lists:
-    get_info(url)
+def main():
+    for url in url_lists:
+        get_info(url)
+    print(df)
+    df.to_csv('douban250.csv', index=False, encoding='utf-8')
 
-print(df)
 
-df.to_csv('douban250.csv', index=False, encoding='utf-8')
+if __name__ == "__main__":
+    main()
